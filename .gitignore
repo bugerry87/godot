@@ -85,7 +85,7 @@ platform/android/java/assets
 *.user
 *.sln.docstates
 *.sln
-*.vcxproj*
+*.vcxproj.user
 
 # Build results
 [Dd]ebug/
