@@ -1,0 +1,3 @@
+[submodule "modules/gdcvp"]
+	path = modules/gdcvp
+	url = https://gitlab.com/bugerry87/cv-pipeline.git

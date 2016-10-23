@@ -295,10 +295,10 @@ if selected_platform in platform_list:
 
 	suffix+=env.extra_suffix
 
-	env["PROGSUFFIX"]=suffix+env["PROGSUFFIX"]
-	env["OBJSUFFIX"]=suffix+env["OBJSUFFIX"]
-	env["LIBSUFFIX"]=suffix+env["LIBSUFFIX"]
-	env["SHLIBSUFFIX"]=suffix+env["SHLIBSUFFIX"]
+	#env["PROGSUFFIX"]=suffix+env["PROGSUFFIX"]
+	#env["OBJSUFFIX"]=suffix+env["OBJSUFFIX"]
+	#env["LIBSUFFIX"]=suffix+env["LIBSUFFIX"]
+	#env["SHLIBSUFFIX"]=suffix+env["SHLIBSUFFIX"]
 
 	sys.path.remove("./platform/"+selected_platform)
 	sys.modules.pop('detect')
@@ -319,6 +319,7 @@ if selected_platform in platform_list:
 		sys.path.remove(tmppath)
 		sys.modules.pop('config')
 
+	env.Append(CPPFLAGS=['-DGODOT'])
 
 	if (env.use_ptrcall):
 		env.Append(CPPFLAGS=['-DPTRCALL_ENABLED']);
