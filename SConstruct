@@ -179,6 +179,8 @@ sys.path.remove("./platform/"+env_base["platform"])
 sys.modules.pop('detect')
 """
 
+env_base.Append(CXXFLAGS="-std=c++0x");
+
 if (env_base['target']=='debug'):
 	env_base.Append(CPPFLAGS=['-DDEBUG_MEMORY_ALLOC']);
 	env_base.Append(CPPFLAGS=['-DSCI_NAMESPACE'])
