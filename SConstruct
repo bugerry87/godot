@@ -58,7 +58,7 @@ custom_tools=['default']
 platform_arg = ARGUMENTS.get("platform", False)
 
 if (os.name=="posix"):
-	pass
+	env_base.Append(CXXFLAGS="-std=c++0x");
 elif (os.name=="nt"):
 	if (os.getenv("VSINSTALLDIR")==None or platform_arg=="android"):
 		custom_tools=['mingw']
@@ -178,8 +178,6 @@ detect.configure(env_base)
 sys.path.remove("./platform/"+env_base["platform"])
 sys.modules.pop('detect')
 """
-
-env_base.Append(CXXFLAGS="-std=c++0x");
 
 if (env_base['target']=='debug'):
 	env_base.Append(CPPFLAGS=['-DDEBUG_MEMORY_ALLOC']);
