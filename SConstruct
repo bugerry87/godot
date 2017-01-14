@@ -58,7 +58,7 @@ custom_tools=['default']
 platform_arg = ARGUMENTS.get("platform", False)
 
 if (os.name=="posix"):
-	env_base.Append(CXXFLAGS="-std=c++0x");
+	pass
 elif (os.name=="nt"):
 	if (os.getenv("VSINSTALLDIR")==None or platform_arg=="android"):
 		custom_tools=['mingw']
@@ -81,7 +81,8 @@ env_base.disabled_modules=[]
 env_base.use_ptrcall=False
 env_base.split_drivers=False
 
-
+if (os.name=="posix"):
+	env_base.Append(CXXFLAGS="-std=c++0x");
 
 env_base.__class__.android_add_maven_repository=methods.android_add_maven_repository
 env_base.__class__.android_add_dependency=methods.android_add_dependency
